@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickTender - KYC Verification</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="SCREEN-ONE" class="kyc-container screen-one">
+        <img class="adhar" src="./assets/Adhar.svg" alt="" />
+        <h2>Let’s get you verified first.</h2>
+        <p>
+          Enter your Aadhar number to kickstart the secure KYC verification
+          process. 
+        </p>
+        <h4>Enter your UPI ID</h4>
+        <input type="text" placeholder="example@upi" />
+        <button class="pay-button" type="submit">Get Verified</button>
+        <div class="notes">
+          <img src="./assets/Notes.svg" />
+          <div class="note-content">
+            <p style="font-size: 12px;">
+              ID verification is required only during the first deposit. Do not refresh or close this page.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="SCREEN-TWO" class="kyc-container screen-two">
+        <h2>Verification complete.</h2>
+        <p>Congratulations! Your KYC has been verified successfully. </p>
+        <img class="adhar-done" src="./assets/adhar-done.svg" alt="" />
+        <p><button class="link-button">Click Here</button> to continue if you haven't been redirected.</p>
+      </div>
+      <div id="SCREEN-THREE" class="kyc-container screen-three">
+        
+        <h2>Verification is in progress.</h2>
+        <p>
+          We are verifying your credentials. This may take a few minutes, please wait...
+        </p>
+        <img class="adhar-await" src="./assets/adhar-await.svg" alt="" />
+        <div class="notes">
+          <img src="./assets/Notes.svg" />
+          <div class="note-content">
+            <p style="font-size: 12px;">
+              ID verification is required only during the first deposit. Please do not refresh or close this page.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="SCREEN-FOUR" class="kyc-container screen-four">
+        <h2>Verification not successful.</h2>
+        <p>
+          Make sure you enter correct Aadhar number and OTP.
+        </p>
+        <img class="adhar-failed" src="./assets/adhar-failed.svg"/>
+        <button style="align-self: center;" class="pay-button" type="submit">Return to Merchant Site</button>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickTender</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <link href="https://fonts.cdnfonts.com/css/verdana" rel="stylesheet" />
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <div class="header-top">
+          <h1>Complete Your Payment</h1>
+          <div class="logo">
+            <img
+              src="./assets/Quicktender.svg"
+              alt="Quicktender Logo"
+              class="logo-image"
+            />
+          </div>
+        </div>
+        <div class="info-container">
+          <div class="info-left">
+            <div class="info-items">
+              <div class="info-country">
+                <p>Country</p>
+                <span>IN</span>
+              </div>
+              <div class="info-orderid">
+                <p>Order ID</p>
+                <span>123456</span>
+              </div>
+            </div>
+            <div class="session-timer">
+              <div class="icon"></div>
+              <p>Session Timer :</p>
+              <span>1m 30s</span>
+            </div>
+          </div>
+          <div class="info-right">
+            <div class="info-amount">
+              <p>You are paying</p>
+              <div id="payment-amount" class="amount">
+                1,000.00 <span>INR</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Methods -->
+
+      <!-- UPI -->
+      <div id="UPI" class="payment-methods-container">
+        <div class="payment-heading">
+          <h2>Preferred Method</h2>
+          <div class="preferred-method" id="preferred-method">
+            <img src="./assets/upi-icon 1.svg" alt="UPI" class="method-icon" />
+            <span>UPI</span>
+            <i class="icon-check"></i>
+          </div>
+          <div class="payment-canvas">
+            <h4>Enter your UPI ID</h4>
+            <input type="text" placeholder="example@upi" />
+            <div class="suggestions">
+              <span>@ybl</span>
+              <span>@axl</span>
+              <span>@okhdfc</span>
+            </div>
+            <a
+              class="pay-button"
+              id="#UPI-COLLECT-BUTTON"
+              href="#session-popup"
+            >
+              Pay Now
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- UPI QR -->
+      <div id="UPI-QR" class="payment-methods-container">
+        <div class="payment-heading">
+          <h2>Preferred Method</h2>
+          <div class="preferred-method" id="preferred-method">
+            <img
+              src="./assets/upi-icon 1.svg"
+              alt="UPI QR"
+              class="method-icon"
+            />
+            <span>UPI QR</span>
+            <i class="icon-check"></i>
+          </div>
+          <div class="payment-canvas">
+            <div id="UPI-QR-SELECT" class="upi-qr-select">
+              <div class="upi-qr-item">
+                <h4>Pay With QR</h4>
+                <div class="qr-container">
+                  <img src="./Assets/QRplaceholder.png" />
+                  <button id="SHOW-QR" type="button">
+                    <span>Show QR</span>
+                    <i class="fas fa-eye"></i>
+                  </button>
+                </div>
+                <div class="footer">
+                  <p>We support all UPI handles</p>
+                  <div class="logos">
+                    <img alt="Freecharge" src="./Assets/freecharge.png" />
+                    <img alt="Amazon Pay" src="./Assets/amazonpay.png" />
+                    <img alt="Google Pay" src="./Assets/Gpay.png" />
+                    <img alt="PhonePe" src="./Assets/phonepay.png" />
+                    <img alt="WhatsApp Pay" src="./Assets/whatsappPay.png" />
+                    <img alt="MobiKwik" src="./Assets/mobikwik.png" />
+                    <img alt="BHIM" src="./Assets/bhim.png" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div id="UPI-QR-DETAILS" class="upi-qr-details">
+              <div class="upi-qr-item">
+                <div class="intent_container">
+                  <button class="pay-button" type="submit" id="payBtn" disabled>
+                    Pay with App
+                  </button>
+                  <div class="notes" style="margin-top: 2rem;">
+                    <div class="note-content">
+                      <p style="font-weight: 600;">How it works:</p>
+                      <p>
+                        • Select your preferred UPI app.
+                      </p>
+                      <p>
+                        • Review the details and enter your UPI PIN to authorize the payment.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="or-divider">
+                    <hr />
+                    <span>or</span>
+                    <hr />
+                  </div>
+                </div>
+                <h4 style="text-align: center; vertical-align: text-top">
+                  Scan the QR code using your UPI app to complete the payment.
+                </h4>
+                <div class="qr-container">
+                  <img src="./Assets/QRimage.png" />
+                </div>
+                <div class="footer">
+                  <p>We support all UPI handles</p>
+                  <div class="logos">
+                    <img alt="Freecharge" src="./Assets/freecharge.png" />
+                    <img alt="Amazon Pay" src="./Assets/amazonpay.png" />
+                    <img alt="Google Pay" src="./Assets/Gpay.png" />
+                    <img alt="PhonePe" src="./Assets/phonepay.png" />
+                    <img alt="WhatsApp Pay" src="./Assets/whatsappPay.png" />
+                    <img alt="MobiKwik" src="./Assets/mobikwik.png" />
+                    <img alt="BHIM" src="./Assets/bhim.png" />
+                  </div>
+                </div>
+                <!-- return home button -->
+                <div class="return-home-container">
+                  <button class="return-home-button" type="button">
+                    Return Home
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PIX -->
+      <div id="PIX" class="payment-methods-container">
+        <div class="payment-heading">
+          <h2>Preferred Method</h2>
+          <div class="preferred-method" id="preferred-method">
+            <img src="./assets/pix icon.svg" alt="PIX" class="method-icon" />
+            <span>PIX</span>
+            <i class="icon-check"></i>
+          </div>
+          <div class="payment-canvas">
+            <div id="PIX-SELECT" class="pix-select">
+              <div class="pix-item">
+                <h4>Select Document Type</h4>
+                <div class="custom-select-wrapper">
+                  <select class="custom-select">
+                    <option selected disabled>Select an option</option>
+                    <option>CPF</option>
+                    <option>CPF</option>
+                    <option>CPF</option>
+                  </select>
+                </div>
+
+                <h4>Enter Document Number</h4>
+                <input type="text" placeholder="Example: 1234567890" />
+                <button id="PIX-PAY-BUTTON" class="pay-button" type="submit">
+                  Pay Now
+                </button>
+              </div>
+            </div>
+            <div id="PIX-DETAILS" class="pix-details">
+              <div class="pix-qr-content">
+                <h4>Scan this QR code</h4>
+                <img src="./Assets/QRimage.png" alt="" />
+                <div class="details-item">
+                  <p style="margin-bottom: 0.5rem; justify-self: center">
+                    QR Code String:
+                  </p>
+                  <div class="detail-content">
+                    <p>1230 2340 3450 4560</p>
+                    <button class="copy-button" type="button">
+                      <img src="./assets/file_copy.svg" alt="" />
+                    </button>
+                  </div>
+                </div>
+                <!-- return home button -->
+                <div class="return-home-container">
+                  <button class="return-home-button" type="button">
+                    Return Home
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Net Banking -->
+      <div id="NET-BANKING" class="payment-methods-container">
+        <div class="payment-heading">
+          <div class="preferred-method" id="preferred-method">
+            <img src="./assets/net banking icon.svg" class="method-icon" />
+            <span>Net Banking</span>
+            <i class="icon-check"></i>
+          </div>
+          <div class="payment-canvas">
+            <h4>Popular Banks</h4>
+            <div class="bank-card-container">
+              <div class="bank-card">
+                <div class="top-icons">
+                  <img src="./assets/SBI.svg" />
+                  <img src="./assets/redirect.svg" />
+                </div>
+                <p>State Bank Of India</p>
+              </div>
+              <div class="bank-card">
+                <div class="top-icons">
+                  <img src="./assets/axis.svg" />
+                  <img src="./assets/redirect.svg" />
+                </div>
+                <p>Axis Bank</p>
+              </div>
+              <div class="bank-card">
+                <div class="top-icons">
+                  <img src="./assets/kotak.svg" />
+                  <img src="./assets/redirect.svg" />
+                </div>
+                <p>Kotak Bank</p>
+              </div>
+              <div class="bank-card">
+                <div class="top-icons">
+                  <img src="./assets/icici.svg" />
+                  <img src="./assets/redirect.svg" />
+                </div>
+                <p>ICICI Bank</p>
+              </div>
+            </div>
+            <h4>Choose Bank</h4>
+            <div class="custom-select-wrapper">
+              <select class="custom-select">
+                <option selected disabled>Select Your Bank</option>
+                <option>State Bank Of India</option>
+                <option>Kotak Mahindra Bank</option>
+                <option>ICICI Bank</option>
+                <option>Axis Bank</option>
+              </select>
+            </div>
+            <button class="pay-button" type="submit">Pay Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bank Transfer -->
+      <div id="BANK-TRANSFER" class="payment-methods-container">
+        <div class="payment-heading">
+          <h2>Preferred Method</h2>
+          <div class="preferred-method" id="preferred-method">
+            <img src="./assets/bank transfer icon.svg" class="method-icon" />
+            <span>Bank Transfer</span>
+            <i class="icon-check"></i>
+          </div>
+          <div class="payment-canvas">
+            <div id="BANK-TRANSFER-SELECT" class="Bank-Transfer-select">
+              <h4>Select Your Bank</h4>
+              <div class="custom-select-wrapper">
+                <select class="custom-select">
+                  <option selected disabled>Select Your Bank</option>
+                  <option>State Bank Of India</option>
+                  <option>Kotak Mahindra Bank</option>
+                  <option>ICICI Bank</option>
+                  <option>Axis Bank</option>
+                </select>
+              </div>
+              <button
+                id="BANK-TRANSFER-PAY-BUTTON"
+                class="pay-button"
+                type="submit"
+              >
+                Pay Now
+              </button>
+            </div>
+
+            <div
+              id="BANK-TRANSFER-ACCOUNT-DETAILS"
+              class="Bank-Account-details"
+            >
+              <h4>Bank Account Details</h4>
+              <div class="details-item">
+                <p>Account Name:</p>
+                <div class="detail-content">
+                  <p>Testing Transaction</p>
+                </div>
+              </div>
+              <div class="details-item">
+                <p>Account Number:</p>
+                <div class="detail-content">
+                  <p>1230 2340 3450 4560</p>
+                  <button class="copy-button" type="button">
+                    <img src="./assets/file_copy.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+              <div class="details-item">
+                <p>Bank Name:</p>
+                <div class="detail-content">
+                  <p>Test Bank</p>
+                </div>
+              </div>
+              <div class="details-item">
+                <p>Bank Code:</p>
+                <div class="detail-content">
+                  <p>12345ABCD</p>
+                </div>
+              </div>
+              <div class="details-item">
+                <p>Expiry Date and Time:</p>
+                <div class="detail-content">
+                  <p>24-04-2023 | 22:03</p>
+                </div>
+              </div>
+              <!-- return home button -->
+              <div class="return-home-container">
+                <button class="return-home-button" type="button">
+                  Return Home
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cash -->
+      <div id="CASH" class="payment-methods-container">
+        <div class="payment-heading">
+          <h2>Preferred Method</h2>
+          <div class="preferred-method" id="preferred-method">
+            <img src="./assets/cash icon.svg" class="method-icon" />
+            <span>Cash</span>
+            <i class="icon-check"></i>
+          </div>
+          <div class="payment-canvas">
+            <div id="CASH-SELECT-BOX" class="Cash-Select-box">
+              <h4>Choose Payment Method</h4>
+              <div class="Cash-Select-wrapper">
+                <div class="group-content" data-content="cash">
+                  <label class="item">
+                    <input type="radio" name="cash" />
+                    <span class="radio-dot"></span>
+                    <img src="./Assets/fawry.svg" 0 />
+                    <span class="item-label">PayAtFawry</span>
+                  </label>
+                </div>
+                <button id="CASH-PAY-BUTTON" class="pay-button" type="submit">
+                  Pay Now
+                </button>
+              </div>
+            </div>
+            <div id="CASH-ACCOUNT-DETAILS" class="cash-account-details">
+              <h4>Pay at Fawry <span>الدفع في فوري</span></h4>
+              <div class="details-item">
+                <p>Amount <span>كمية</span></p>
+                <div class="detail-content">
+                  <p>EGP 500</p>
+                </div>
+              </div>
+              <div class="details-item">
+                <p>Reference Number <span>الرقم المرجعي</span></p>
+                <div class="detail-content">
+                  <p>1230 2340 3450 4560</p>
+                </div>
+              </div>
+              <div class="details-item">
+                <p>
+                  Expiry Date and Time <span>تاريخ ووقت انتهاء الصلاحية</span>
+                </p>
+                <div class="detail-content">
+                  <p>24-04-2023 | 22:03</p>
+                </div>
+              </div>
+              <div class="download-button-container">
+                <button class="download-button" type="button">
+                  Download as PDF <img src="./assets/download.svg" alt="" />
+                </button>
+              </div>
+              <div class="notes">
+                <img src="./assets/Notes.svg" />
+                <div class="note-content">
+                  <p>
+                    Please complete payment at Fawry store before order expiry
+                    time.
+                  </p>
+                  <p>
+                    يرجى إتمام عملية الدفع في متجر فوري قبل انتهاء صلاحية الطلب
+                  </p>
+                </div>
+              </div>
+              <!-- return home button -->
+              <div class="return-home-container">
+                <button class="return-home-button" type="button">
+                  Return Home
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wallet -->
+      <div id="WALLET" class="payment-methods-container">
+        <div class="payment-heading">
+          <h2>Preferred Method</h2>
+          <div class="preferred-method" id="preferred-method">
+            <img src="./assets/wallet icon.svg" class="method-icon" />
+            <span>Wallet</span>
+            <i class="icon-check"></i>
+          </div>
+          <div class="payment-canvas">
+            <h4>Choose Your Wallet</h4>
+            <div class="group-content" data-content="cash">
+              <label class="item">
+                <input type="radio" name="cash" checked />
+                <span class="radio-dot"></span>
+                <img src="./assets/easypaisa.svg" />
+                <span class="item-label">Easypaisa</span>
+              </label>
+              <label class="item">
+                <input type="radio" name="cash" />
+                <span class="radio-dot"></span>
+                <img src="./assets/jazzcash.svg" />
+                <span class="item-label">JazzCash</span>
+              </label>
+            </div>
+
+            <h4>Enter Wallet Number</h4>
+            <input type="text" placeholder="Example: 1234567890" />
+            <button class="pay-button" type="submit">Pay Now</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Payment Methods (Nav Grid)-->
+      <div class="nav-methods">
+        <h2>Other Payment Methods</h2>
+        <div class="nav-item-container">
+          <div id="UPI-BTN" class="nav-item">
+            <img src="./assets/upi-icon.svg" class="method-icon" />
+            <span>UPI</span>
+          </div>
+          <div id="PIX-BTN" class="nav-item">
+            <img src="./assets/pix icon.svg" class="method-icon" />
+            <span>PIX</span>
+          </div>
+          <div id="UPI-QR-BTN" class="nav-item">
+            <img src="./assets/upiqr icon.svg" class="method-icon" />
+            <span>UPI QR</span>
+          </div>
+          <div id="NET-BANKING-BTN" class="nav-item">
+            <img src="./assets/net banking icon.svg" class="method-icon" />
+            <span>Net Banking</span>
+          </div>
+          <div id="CASH-BTN" class="nav-item">
+            <img src="./assets/cash icon.svg" class="method-icon" />
+            <span>Cash</span>
+          </div>
+          <div id="BANK-TRANSFER-BTN" class="nav-item">
+            <img src="./assets/bank transfer icon.svg" class="method-icon" />
+            <span>Bank Transfer</span>
+          </div>
+          <div id="WALLET-BTN" class="nav-item">
+            <img src="./assets/wallet icon.svg" class="method-icon" />
+            <span>Wallet</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- cancel button -->
+      <div class="cancel-button-container">
+        <a class="cancel-button" href="#cancle-popup">Cancel Transaction</a>
+      </div>
+
+      <!-- This is a test button Please remove once added in flow -->
+      <a href="#transaction-popup">
+        <button>Transaction Button for testing purpose only</button>
+      </a>
+
+      <!-- Session Timer Popup -->
+      <div id="session-popup" class="overlay">
+        <div class="session-popup">
+          <lottie-player
+            src="./assets/Animation - 1750225426029.json"
+            background="transparent"
+            speed="1"
+            style="height: 180px"
+            loop
+            autoplay
+          ></lottie-player>
+          <h4>Your Session wil Expire in</h4>
+          <h1>05m 41s</h1>
+          <h2>Order ID: <span>32002</span></h2>
+          <p style="margin-bottom: 1.5rem">
+            Please confirm the payment before session time runs out.
+          </p>
+          <a href="#" class="close return-home-button">Return Home</a>
+          <p style="color: red; margin-top: 2rem">
+            Do not refresh or close the page.
+          </p>
+        </div>
+      </div>
+
+      <!-- Transaction Sucessful Popup -->
+      <div id="transaction-popup" class="overlay">
+        <div class="transaction-popup">
+          <lottie-player
+            src="./assets/Check.json"
+            background="transparent"
+            speed="1"
+            style="height: 180px"
+            loop
+            autoplay
+          ></lottie-player>
+          <h1>Transaction Completed</h1>
+          <a href="#" class="close return-home-button">Return Home</a>
+        </div>
+      </div>
+
+      <!-- Cancle Confirmation Popup -->
+      <div id="cancle-popup" class="overlay">
+        <div class="cancle-popup">
+          <p style="text-align: left">
+            Please confirm if you'd like to cancel the transaction.
+          </p>
+          <div
+            style="
+              display: flex;
+              flex-direction: row;
+              justify-content: space-between;
+            "
+          >
+            <a href="#" style="color: #22bb33; background: none" class="close"
+              >Yes</a
+            >
+            <a href="#" style="color: #bb2124; background: none" class="close"
+              >No</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
